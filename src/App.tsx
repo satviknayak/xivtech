@@ -38,7 +38,7 @@ const ServicesContent = [
 
 function App() {
 
-  const [formOpen,setFormOpen] = useState(true)
+  const [formOpen,setFormOpen] = useState(false)
 
   return (
     <div className='relative'>
@@ -53,7 +53,7 @@ function App() {
         <Services key={index} title={service.title} image={service.image} paragraph={service.paragraph} url={service.url} link={service.link} />
       ))}
 
-      <button onClick={()=>setFormOpen(true)} className='text-md bg-black text-white hover:bg-white hover:border-black hover:text-black border-2 px-10 py-5 mx-[5%] mb-24 tab:mx-[18%] rounded-sm'>
+      <button onClick={()=>setFormOpen(true)} className='text-md hover:text-white border-black text-black border-2 px-10 py-5 mx-[5%] mb-24 tab:mx-[18%] rounded-sm button'>
         Get in touch
       </button>
 

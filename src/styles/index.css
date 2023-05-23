@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button {
+    background: linear-gradient(45deg, black 50%, white 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;  
+}
+  
+.button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, transparent 49%, black 51%);
+    z-index: -1;
+}
+  
+.button,
+.button:after {
+    background-size: 300%;
+    background-position: 100%;
+    transition: 0.75s;
+}
+  
+.button:hover,
+.button:hover:after {
+    background-position: 0;
+}
+
+.font-noto{
+    font-family: 'Noto Serif', serif;
+}

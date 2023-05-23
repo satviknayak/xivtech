@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction,Fragment } from "react";
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react';
+import { VscChromeClose } from 'react-icons/vsc';
 
 interface FormProps {
   formOpen: boolean;
@@ -33,9 +34,9 @@ function Form(props:FormProps) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-[800px] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title as="h1" className="text-2xl font-medium leading-6 text-gray-900">Contact Us</Dialog.Title>
-                  
+                <Dialog.Panel className="w-full max-w-[800px] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all realtive">
+                  <Dialog.Title as="h1" className="pt-4 text-2xl font-medium leading-6 text-gray-900">Contact Us</Dialog.Title>
+                  <VscChromeClose className='absolute top-8 right-8 text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={()=>props.setFormOpen(false)} />
                   <form className='flex flex-col gap-y-8 my-8'>
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
@@ -67,10 +68,10 @@ function Form(props:FormProps) {
                     <div className='flex flex-col w-full gap-y-2'>
                         <span>Country *</span>
                         <select required className='w-full h-10 px-2 border-[1px] rounded-lg border-gray-600/40 focus:border-none focus-visible:ring-2  focus-visible:ring-blue-400 focus-visible:shadow-sm focus-visible:ring-offset-2 focus-visible:shadow-blue-500' >
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option selected value="">Select a Country</option>
+                            <option value="">India</option>
+                            <option value="">USA</option>
+                            <option value="">Japan</option>
                         </select>
                     </div>
                     <div className='flex flex-col w-full gap-y-2'>
